@@ -23,8 +23,8 @@ public class tiltTable : MonoBehaviour
 			turn (Vector3.right, 1.0f);
 
 		if (Input.GetKey (KeyCode.DownArrow))
-			turn (Vector3.right, -1.0f);
-		
+			downArrow ();
+
 	
 	}
 
@@ -33,4 +33,9 @@ public class tiltTable : MonoBehaviour
 		transform.RotateAround (transform.position, axis, turnSpeed * dir);
 	}
 
+	void downArrow()
+	{
+		// Debug.Log ("downarrow pressed");
+		turn (Vector3.right, -1.0f);
+	}
 }
