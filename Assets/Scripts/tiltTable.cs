@@ -13,16 +13,16 @@ public class tiltTable : MonoBehaviour
 
 	void FixedUpdate () 
 	{
-		if (Input.GetKey (KeyCode.LeftArrow))
+		if (Input.GetAxisRaw ("Horizontal") < 0.0f)
 			turn (Vector3.forward, 1.0f);
 
-		if (Input.GetKey (KeyCode.RightArrow))
+		if (Input.GetAxisRaw("Horizontal") > 0.0f)
 			turn (Vector3.forward, -1.0f);
 
-		if (Input.GetKey (KeyCode.UpArrow))
+		if (Input.GetAxisRaw ("Vertical") > 0.0f)
 			turn (Vector3.right, 1.0f);
 
-		if (Input.GetKey (KeyCode.DownArrow))
+		if (Input.GetAxisRaw("Vertical") < 0.0f)
 			downArrow ();
 
 	
@@ -35,7 +35,8 @@ public class tiltTable : MonoBehaviour
 
 	void downArrow()
 	{
-		// Debug.Log ("downarrow pressed");
 		turn (Vector3.right, -1.0f);
 	}
+
+
 }
