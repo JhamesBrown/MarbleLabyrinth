@@ -4,7 +4,7 @@ using System.Collections;
 public class tiltTable : MonoBehaviour 
 {
 
-	public float turnSpeed = 1.0f;
+	public float turnSpeed = 0.5f;
 
 	void Start () 
 	{
@@ -23,20 +23,15 @@ public class tiltTable : MonoBehaviour
 			turn (Vector3.right, 1.0f);
 
 		if (Input.GetAxisRaw("Vertical") < 0.0f)
-			downArrow ();
+			turn (Vector3.right, -1.0f);
 
 	
 	}
 
 	void turn(Vector3 axis, float dir)
 	{
-		transform.RotateAround (transform.position, axis, turnSpeed * dir);
+		transform.Rotate (axis * dir * turnSpeed);
+		// transform.RotateAround (transform.position, axis, turnSpeed * dir);
 	}
-
-	void downArrow()
-	{
-		turn (Vector3.right, -1.0f);
-	}
-
 
 }
