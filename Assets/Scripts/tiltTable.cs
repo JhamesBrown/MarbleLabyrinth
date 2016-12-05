@@ -28,6 +28,7 @@ public class tiltTable : MonoBehaviour
 		if (Input.GetAxisRaw("Horizontal") > 0.0f)
 			turn (Vector3.forward, -1.0f);
 
+		transform.eulerAngles = new Vector3(transform.rotation.eulerAngles.x * 1f,transform.rotation.eulerAngles.y * 0f,transform.rotation.eulerAngles.z * 1f);
 	}
 
 	void turn(Vector3 axis, float dir)
